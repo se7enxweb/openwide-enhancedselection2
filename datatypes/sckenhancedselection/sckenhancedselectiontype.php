@@ -33,11 +33,11 @@ class SckEnhancedSelectionType extends eZDataType {
 	const CLASS_STORAGE_XML = 'data_text5';
 	protected $defaultDelimiter;
 
-	function SckEnhancedSelectionType() {
-		$this->eZDataType( self::DATATYPESTRING, ezpi18n::tr( 'extension/sckenhancedselection/datatypes', 'Enhanced Selection 2', 'Datatype name' ), array(
+        function __construct() {
+        	$this->eZDataType( self::DATATYPESTRING, ezpi18n::tr( 'extension/sckenhancedselection/datatypes', 'Enhanced Selection 2', 'Datatype name' ), array(
 			'serialize_supported' => true,
 			'object_serialize_map' => array( 'data_text' => 'selection' )
-				)
+			)
 		);
         $INI = eZINI::instance( 'enhancedselection2.ini' );
         $this->defaultDelimiter = $INI->variable('Enhancedselection2Settings', 'DefaultDelimiter');
